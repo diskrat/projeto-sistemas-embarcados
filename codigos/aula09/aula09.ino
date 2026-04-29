@@ -34,6 +34,6 @@ void loop()
   sensorValue = ADCL | (ADCH << 8);
 
   /* Mapeia o valor lido para a faixa 0-255 e ajusta o PWM */
-  outputValue = map(sensorValue, 0, 1023, 0, 255);
+  outputValue = (sensorValue >> 2);
   OCR1A = outputValue;
 }
